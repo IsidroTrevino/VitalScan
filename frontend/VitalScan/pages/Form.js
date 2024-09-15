@@ -37,14 +37,13 @@ export default function Form() {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.title}>Formulario</Text>
-        </View>
         
-        <ScrollView 
-            style={styles.container}
-            contentContainerStyle={styles.contentContainer}
-         >
+            <ScrollView 
+                style={styles.container}
+                contentContainerStyle={styles.contentContainer}
+            >
 
             <Text style={styles.text}>¿Cuánto pesas?</Text>
             <Input
@@ -106,7 +105,8 @@ export default function Form() {
             <Button title="Enviar" onPress={handleLogin} />
 
             <StatusBar style="auto" />
-        </ScrollView>
+            </ScrollView>
+        </View>
     );
 }
 
@@ -123,7 +123,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 32,
         fontWeight: 'bold',
-        marginBottom: 40,
+        marginBottom: 15,
+        marginStart: 10,
+        marginTop: 40,
+        marginTop: 66,
+        paddingHorizontal: 20,
         color: '#2B2D42',
     },
     text: {
