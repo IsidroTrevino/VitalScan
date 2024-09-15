@@ -31,8 +31,8 @@ export const formPost = async (req, res) => {
         const [result] = await pool.query('CALL InsertForm(?, ?, ?, ?, ?, ?, ?, ?)', 
             [idUsuario, peso, altura, nivel_estres, sueno, ejercicio, latidos, respira]);
 
-        // Verificar si se devuelve el insertId
-        if (result[0].length > 0 && result[0][0].insertId) {
+        // Verificar si result[0] existe
+        if (result && result[0] && result[0].length > 0 && result[0][0].insertId) {
             return res.status(200).json({
                 message: 'Datos insertados en Computar exitosamente',
             });
