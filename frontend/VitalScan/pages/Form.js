@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-//import { set } from 'express/lib/application';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Button from '../components/Button';
-import InputField from '../components/InputField';
+import Input from '../components/Input';
 import React, { useState } from 'react';
 
 export default function Form() {
@@ -13,21 +12,22 @@ export default function Form() {
     const [ejercicio, setEjercicio] = useState('');
     const [latidos, setLatidos] = useState('');
     const [respira, setRespira] = useState('');
+    const idUsuario = 1;
     
     const handleLogin = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/forms', {
+            const response = await fetch('http://localhost:3000/api/form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ peso, altura, nivel_estres, sueno, ejercicio, latidos, respira }), 
+                body: JSON.stringify({ idUsuario, peso, altura, nivel_estres, sueno, ejercicio, latidos, respira }), 
             });
 
             const data = await response.json();
 
             if (response.status === 200) {
-                console.log('Login exitoso', data);
+                console.log('Datos insertados exitosamente', data);
             } else {
                 console.log('Error:', data.message);
             }
@@ -37,11 +37,17 @@ export default function Form() {
     };
 
     return (
-        <View style={styles.container}>
+        <View>
             <Text style={styles.title}>Formulario</Text>
+        </View>
+        
+        <ScrollView 
+            style={styles.container}
+            contentContainerStyle={styles.contentContainer}
+         >
 
-            <Text style={styles.title}>Formulario</Text>
-            <InputField
+            <Text style={styles.text}>¿Cuánto pesas?</Text>
+            <Input
                 placeholder="Peso"
                 value={peso}
                 onChangeText={setPeso}
@@ -49,59 +55,58 @@ export default function Form() {
                 isPassword={false}
             />
 
-            <InputField
+            <Text style={styles.text}>¿Cuánto mides?</Text>
+            <Input
                 placeholder="Altura"
                 value={altura}
                 onChangeText={setAltura}
                 isPassword={false}
             />
     
-            <InputField
-                placeholder="¿Del 1 al 10 qué tanto estrés experimentas en un día?"
+            <Text style={styles.text}>¿Del 1 al 10 qué tanto estrés experimentas en un día?</Text>
+            <Input
+                placeholder="Niveles de estrés"
                 value={nivel_estres}
                 onChangeText={setNivelEstres}
                 isPassword={false}
             />
 
-            <InputField
-                placeholder="¿Cuántas horas duermes al día?"
+            <Text style={styles.text}>¿Cuántas horas duermes al día?</Text>
+            <Input
+                placeholder="Horas"
                 value={sueno}
                 onChangeText={setSueno}
                 isPassword={false}
             />
 
-            <InputField
-                placeholder="¿Cuántos días a la semana haces ejercicio?"
+            <Text style={styles.text}>¿Cuántos días a la semana haces ejercicio?</Text>
+            <Input
+                placeholder="Días"
                 value={ejercicio}
                 onChangeText={setEjercicio}
                 isPassword={false}
             />
 
-            <InputField
-                placeholder="¿Cuántos días a la semana haces ejercicio?"
-                value={ejercicio}
-                onChangeText={setEjercicio}
-                isPassword={false}
-            />
-
-            <InputField
-                placeholder="¿Cuántos látidos de corazón tienes por minuto?"
-                value={latidos}
-                onChangeText={setLatidos}
-                isPassword={false}
-            />
-
-            <InputField
-                placeholder="¿Cuántas respiraciones tienes por minuto?"
+            <Text style={styles.text}>¿Cuántas respiraciones tienes por minuto?</Text>
+            <Input
+                placeholder="Número de respiraciones"
                 value={respira}
                 onChangeText={setRespira}
                 isPassword={false}
             />
 
+            <Text style={styles.text}>¿Cuántos latidos tienes por minuto?</Text>
+            <Input
+                placeholder="Número de latidos"
+                value={latidos}
+                onChangeText={setLatidos}
+                isPassword={false}
+            />  
+
             <Button title="Enviar" onPress={handleLogin} />
 
             <StatusBar style="auto" />
-        </View>
+        </ScrollView>
     );
 }
 
@@ -109,9 +114,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#F0F4FF',
-        alignItems: 'center',
-        justifyContent: 'center',
+    },
+    contentContainer: {
         padding: 20,
+        alignItems: 'flex-start',
+        justifyContent: 'center',
     },
     title: {
         fontSize: 32,
@@ -119,4 +126,9 @@ const styles = StyleSheet.create({
         marginBottom: 40,
         color: '#2B2D42',
     },
-})
+    text: {
+        fontSize: 15,
+        color: '#000000',
+        marginBottom: 15,
+    },
+});
