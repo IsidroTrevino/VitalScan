@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         fontSize: 32,
         fontWeight: 'bold',
         marginBottom: 40,
-        color: '#2B2D42',
+        color: '#002E73',
     },
     forgotPassword: {
         color: '#4F8EF7',

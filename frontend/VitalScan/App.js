@@ -1,19 +1,32 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import LogIn from './pages/LogIn';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import AboutApp from './pages/AboutApp'; 
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <LogIn /> 
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen 
+          name="Home" 
+          component={Home} 
+          options={{ headerShown: false }}  
+        />
+        <Stack.Screen 
+          name="Profile" 
+          component={Profile} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="AboutApp" 
+          component={AboutApp} 
+          options={{ headerShown: false }}  
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F0F4FF',
-    justifyContent: 'center',
-  },
-});
