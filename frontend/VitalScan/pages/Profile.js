@@ -38,10 +38,10 @@ export default function Profile({ navigation }) {
           {/* Sección "Más" */}
           <Text style={styles.sectionTitle}>Más</Text>
           <View style={styles.moreContainer}>
-            <TouchableOpacity style={styles.moreButton}>
-              <Ionicons name="notifications-outline" size={24} color="#4F8EF7" />
-              <Text style={styles.moreButtonText}>Soporte</Text>
-            </TouchableOpacity>
+          <TouchableOpacity style={styles.moreButton} onPress={() => navigation.navigate('Support')}>
+  <Ionicons name="notifications-outline" size={24} color="#4F8EF7" />
+  <Text style={styles.moreButtonText}>Soporte</Text>
+</TouchableOpacity>
             <TouchableOpacity 
               style={[styles.moreButton, { marginTop: 15 }]} 
               onPress={() => navigation.navigate('AboutApp')}

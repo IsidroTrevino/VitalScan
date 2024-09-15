@@ -8,7 +8,7 @@ export default function AboutApp({ navigation }) {
       <ScrollView>
         {/* Flecha de regreso */}
         <View style={styles.headerContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
             <Ionicons name="arrow-back-outline" size={28} color="#002E73" />
           </TouchableOpacity>
         </View>
@@ -33,7 +33,7 @@ export default function AboutApp({ navigation }) {
           </Text>
 
           <Text style={styles.description}>
-            Desarrollado por: Alejandra Peña y su equipo.
+            Desarrollado por: Code Ninjas.
           </Text>
         </View>
       </ScrollView>
@@ -49,7 +49,14 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingTop: 30,  // Bajamos más el botón para facilitar su acceso
+  },
+  backButton: {
+    backgroundColor: '#E0ECFF',  // Fondo azul claro para el círculo
+    padding: 10,  // Espacio interno del botón
+    borderRadius: 50,  // Hacer el botón circular
+    elevation: 3,  // Sombra para que se vea como un botón elevado
   },
   title: {
     fontSize: 24,
