@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: '100%',
     padding: 10,
-    marginBottom: 20,
+    marginBottom: 10,
+    marginRight: 10,
   },
   input: {
     flex: 1,
