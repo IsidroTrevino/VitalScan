@@ -6,6 +6,7 @@ module.exports = (async () => {
   return {
     resolver: {
       // Add bin to assetExts
+      assets: ['./node_modules/react-native-vector-icons/Fonts'],
       assetExts: [...assetExts, "bin"],
     },
   };

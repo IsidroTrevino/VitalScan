@@ -1,13 +1,15 @@
-import { bundleResourceIO } from "@tensorflow/tfjs-react-native";
+import * as FileSystem from 'expo-file-system';
 
-const modelJson = require("../../models/pppmodel_weights.json");
-const modelWeights = [
-  require("../../models/model_weights.bin"),
-];
+const modelJsonPath = FileSystem.documentDirectory + 'models/pppmodel_weights.json';
+const modelWeightsPath = FileSystem.documentDirectory + 'models/model_weights.bin';
 
+const loadModel = async () => {
+  try {
+    const modelJson = await FileSystem.readAsStringAsync(modelJsonPath);
+    const modelWeights = await FileSystem.readAsStringAsync(modelWeightsPath, { encoding: FileSystem.EncodingType.Base64 });
 
-/**
- * loadModel for Android and IOS
- * loading model via bundleResourceIO and assets
- */
-export const modelURI = bundleResourceIO(modelJson, modelWeights);
+    // Continue with loading the model...
+  } catch (error) {
+    console.error('Error loading model files:', error);
+  }
+};

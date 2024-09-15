@@ -8,6 +8,7 @@ import "@tensorflow/tfjs-react-native";
 import { modelURI } from "../VitalScan/pages/modelHandler";
 import CameraView from "../VitalScan/pages/Camera";
 
+
 const App = () => {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState("back");
