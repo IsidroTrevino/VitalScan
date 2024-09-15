@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native'; //
+import { NavigationContainer } from '@react-navigation/native'; 
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import AboutApp from './pages/AboutApp';
 import LandingPage from './pages/LandingPage';
-import LogIn from './pages/LogIn';  // Importar correctamente SignIn
+import LogIn from './pages/LogIn';  
 
 const Stack = createStackNavigator();
 
@@ -40,6 +40,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
-    */
+    
   );
 }
