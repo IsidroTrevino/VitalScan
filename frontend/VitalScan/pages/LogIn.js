@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Button from '../components/Button';
 import InputField from '../components/InputField';
 
-export default function LogIn() {
+export default function LogIn({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,11 +23,34 @@ export default function LogIn() {
 
             if (response.status === 200) {
                 console.log('Login exitoso', data);
+
+                // Guardar idUsuario y firstLogin en AsyncStorage
+                await AsyncStorage.setItem('idUsuario', String(data.idUsuario));
+                await AsyncStorage.setItem('firstLogin', String(data.firstLogin));
+                await AsyncStorage.setItem('isAdmin', String(data.isAdmin)); // Guardar si es admin
+
+                // Verificar si es administrador
+                const isAdmin = data.isAdmin === true || data.isAdmin === "true" || data.isAdmin === 1 || data.isAdmin === "1";
+                const isFirstLogin = data.firstLogin === 1;  // Verificar si es el primer login
+
+                if (isAdmin) {
+                    // Redirigir a la pantalla de admins
+                    console.log('Usuario es admin, redirigiendo al panel de admins.');
+                    navigation.navigate('HomeAdmins');  // Redirigir al HomeAdmins si es admin
+                } else if (isFirstLogin) {
+                    console.log('Es el primer login, redirigiendo al formulario.');
+                    navigation.navigate('Form');  // Redirigir al formulario
+                } else {
+                    console.log('No es el primer login, redirigiendo al Home.');
+                    navigation.navigate('Home');  // Redirigir a home si no es admin
+                }
             } else {
-                console.log('Error:', data.message);
+                console.log('Error en el login:', data.message);
+                Alert.alert('Error', data.message);
             }
         } catch (error) {
             console.error('Error en el servidor:', error);
+            Alert.alert('Error en el servidor', 'No se pudo completar el login');
         }
     };
 
