@@ -47,3 +47,16 @@ SELECT * from Usuario
 INSERT INTO Usuario (Nombre, Apellido, Edad, Puesto, Ciudad, Correo, password, isAdmin)
 VALUES ('Juan', 'Perez', 28, 'Ingeniero de Software', 'Monterrey', 'juan.perez@example.com', 'password123', FALSE);
 
+DELIMITER //
+
+CREATE PROCEDURE VerifyUser (
+    IN inputEmail VARCHAR(255),
+    IN inputPassword VARCHAR(255)
+)
+BEGIN
+    SELECT idUsuario, Nombre, Apellido, Edad, Puesto, Ciudad 
+    FROM Usuario 
+    WHERE Correo = inputEmail AND password = inputPassword;
+END //
+
+DELIMITER ;
