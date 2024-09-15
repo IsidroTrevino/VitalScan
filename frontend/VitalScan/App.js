@@ -8,6 +8,7 @@ import Form from './pages/Form';
 import Support from './pages/Support'; 
 import HomeAdmins from './pages/HomeAdmins';
 import ProfileAdmins from './pages/ProfileAdmins';
+import InfoExtra from './pages/InfoEmployee';
 
 const Stack = createStackNavigator();
 
