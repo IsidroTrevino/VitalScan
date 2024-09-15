@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { set } from 'express/lib/application';
-import React, { useState } from 'react';
+//import { set } from 'express/lib/application';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-
+import Button from '../components/Button';
+import InputField from '../components/InputField';
+import React, { useState } from 'react';
 
 export default function Form() {
     const [peso, setPeso] = useState('');
@@ -39,6 +40,7 @@ export default function Form() {
         <View style={styles.container}>
             <Text style={styles.title}>Formulario</Text>
 
+            <Text style={styles.title}>Formulario</Text>
             <InputField
                 placeholder="Peso"
                 value={peso}
@@ -55,19 +57,66 @@ export default function Form() {
             />
     
             <InputField
-                placeholder="Niveles de estrés"
+                placeholder="¿Del 1 al 10 qué tanto estrés experimentas en un día?"
                 value={nivel_estres}
                 onChangeText={setNivelEstres}
                 isPassword={false}
             />
 
-            <TouchableOpacity>
-                <Text style={styles.forgotPassword}>¿Olvidaste tu contraseña?</Text>
-            </TouchableOpacity>
+            <InputField
+                placeholder="¿Cuántas horas duermes al día?"
+                value={sueno}
+                onChangeText={setSueno}
+                isPassword={false}
+            />
 
-            <Button title="Ingresar" onPress={handleLogin} />
+            <InputField
+                placeholder="¿Cuántos días a la semana haces ejercicio?"
+                value={ejercicio}
+                onChangeText={setEjercicio}
+                isPassword={false}
+            />
+
+            <InputField
+                placeholder="¿Cuántos días a la semana haces ejercicio?"
+                value={ejercicio}
+                onChangeText={setEjercicio}
+                isPassword={false}
+            />
+
+            <InputField
+                placeholder="¿Cuántos látidos de corazón tienes por minuto?"
+                value={latidos}
+                onChangeText={setLatidos}
+                isPassword={false}
+            />
+
+            <InputField
+                placeholder="¿Cuántas respiraciones tienes por minuto?"
+                value={respira}
+                onChangeText={setRespira}
+                isPassword={false}
+            />
+
+            <Button title="Enviar" onPress={handleLogin} />
 
             <StatusBar style="auto" />
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#F0F4FF',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+    },
+    title: {
+        fontSize: 32,
+        fontWeight: 'bold',
+        marginBottom: 40,
+        color: '#2B2D42',
+    },
+})
