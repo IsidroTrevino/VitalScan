@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Button from '../components/Button';
 import InputField from '../components/InputField';
 
-export default function LogIn() {
+export default function LogIn({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,11 +23,27 @@ export default function LogIn() {
 
             if (response.status === 200) {
                 console.log('Login exitoso', data);
+
+                await AsyncStorage.setItem('idUsuario', String(data.idUsuario));
+                await AsyncStorage.setItem('firstLogin', String(data.firstLogin));  // Guardado como string
+
+                // Convertir firstLogin a booleano correctamente
+                const isFirstLogin = data.firstLogin === true || data.firstLogin === "true" || data.firstLogin === 1 || data.firstLogin === "1";
+
+                if (isFirstLogin) {
+                    console.log('Es el primer login, redirigiendo al formulario.');
+                    navigation.navigate('Form');
+                } else {
+                    console.log('No es el primer login, redirigiendo al Home.');
+                    navigation.navigate('Home');
+                }
             } else {
-                console.log('Error:', data.message);
+                console.log('Error en el login:', data.message);
+                Alert.alert('Error', data.message);
             }
         } catch (error) {
             console.error('Error en el servidor:', error);
+            Alert.alert('Error en el servidor', 'No se pudo completar el login');
         }
     };
 

@@ -4,16 +4,21 @@ export const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const [result] = await pool.query('CALL VerifyUser(?, ?)', [email, password]);
+        // Verificar si el usuario existe y la contraseña coincide
+        const [result] = await pool.query('SELECT * FROM Usuario WHERE Correo = ? AND password = ?', [email, password]);
 
-        if (result[0].length === 0) {
+        if (result.length === 0) {
             return res.status(400).json({ message: 'Correo o contraseña incorrectos' });
         }
 
-        const user = result[0][0];
+        const user = result[0];
+
+        // Verificar si es la primera vez que hace login
+        const isFirstLogin = user.First === 1;  // Convertir el valor de First a booleano
 
         return res.status(200).json({
             idUsuario: user.idUsuario,
+            firstLogin: isFirstLogin, 
             message: 'Login exitoso',
         });
 
@@ -31,17 +36,16 @@ export const formPost = async (req, res) => {
         const [result] = await pool.query('CALL InsertForm(?, ?, ?, ?, ?, ?, ?, ?)', 
             [idUsuario, peso, altura, nivel_estres, sueno, ejercicio, latidos, respira]);
 
-        // Verificar si result[0] existe
-        if (result && result[0] && result[0].length > 0 && result[0][0].insertId) {
-            return res.status(200).json({
-                message: 'Datos insertados en Computar exitosamente',
-            });
-        } else {
-            return res.status(400).json({ message: 'No se pudo insertar en Computar' });
-        }
+        // Actualizar el campo 'First' a false
+        await pool.query('UPDATE Usuario SET First = FALSE WHERE idUsuario = ?', [idUsuario]);
+
+        return res.status(200).json({
+            message: 'Datos insertados en Computar y First actualizado a false exitosamente',
+        });
 
     } catch (error) {
         console.error('Error en formPost:', error);
         return res.status(500).json({ message: 'Error en el servidor' });
     }
-}
+};
+

@@ -15,11 +15,9 @@ export default function Profile({ navigation }) {
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.profileContainer}>
-          {/* Nombre e ID alineados a la izquierda */}
           <Text style={styles.name}>{userData.name}</Text>
           <Text style={styles.userId}>ID {userData.id}</Text>
 
-          {/* Tarjetas de información */}
           <View style={styles.infoCard}>
             <View style={styles.infoItem}>
               <Text style={styles.infoLabel}>Edad</Text>

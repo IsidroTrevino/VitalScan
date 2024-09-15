@@ -1,0 +1,12 @@
+train: /content/yolov5/output/train
+val: /content/yolov5/output/valid
+test: /content/yolov5/output/test
+nc: 3
+names: ['Bajo', 'Medio', 'Alto']
+
+roboflow:
+  workspace: projekakhir-nn6gi
+  project: stress-detection-through-iris
+  version: 1
+  license: Public Domain
+  url: https://universe.roboflow.com/projekakhir-nn6gi/stress-detection-through-iris/dataset/1
