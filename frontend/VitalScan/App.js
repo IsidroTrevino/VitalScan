@@ -5,7 +5,7 @@ import LogIn from './pages/LogIn';
 export default function App() {
   return (
     <View style={styles.container}>
-      <LogIn /> 
+      <Form/>
     </View>
   );
 }

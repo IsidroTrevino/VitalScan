@@ -55,12 +55,6 @@ export default function LogIn() {
 
             <Button title="Ingresar" onPress={handleLogin} />
 
-            <TouchableOpacity>
-                <Text style={styles.registerText}>
-                    ¿No tienes una cuenta? <Text style={styles.registerLink}>Registrate aquí.</Text>
-                </Text>
-            </TouchableOpacity>
-
             <StatusBar style="auto" />
         </View>
     );
