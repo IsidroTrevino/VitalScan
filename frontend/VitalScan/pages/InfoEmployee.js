@@ -2,17 +2,19 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';  // Importar iconos de Ionicons
 
-export default function Profile({ navigation }) {
+export default function InfoExtra({ navigation }) {
   const userData = {
     name: 'Alejandra Peña',
     id: 'E01234',
     age: 20,
     position: 'Ingeniero de Software',
     city: 'Monterrey'
+    //color : 'red'
   };
 
   return (
     <View style={styles.container}>
+      <Ionicons name="arrow-back-circle-outline" size={24} color="#black" />
       <ScrollView>
         <View style={styles.profileContainer}>
           {/* Nombre e ID alineados a la izquierda */}
@@ -39,9 +41,9 @@ export default function Profile({ navigation }) {
           <Text style={styles.sectionTitle}>Más</Text>
           <View style={styles.moreContainer}>
           <TouchableOpacity style={styles.moreButton} onPress={() => navigation.navigate('Support')}>
-            <Ionicons name="notifications-outline" size={24} color="#4F8EF7" />
-            <Text style={styles.moreButtonText}>Soporte</Text>
-          </TouchableOpacity>
+  <Ionicons name="notifications-outline" size={24} color="#4F8EF7" />
+  <Text style={styles.moreButtonText}>Soporte</Text>
+</TouchableOpacity>
             <TouchableOpacity 
               style={[styles.moreButton, { marginTop: 15 }]} 
               onPress={() => navigation.navigate('AboutApp')}
@@ -53,19 +55,6 @@ export default function Profile({ navigation }) {
         </View>
       </ScrollView>
 
-      {/* Menú inferior con casita y perfil */}
-      <View style={styles.bottomMenu}>
-        {/* Botón para navegar a Home */}
-        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Home')}>
-          <Ionicons name="home-outline" size={24} color="#000" />
-          <Text style={styles.menuText}>Inicio</Text>
-        </TouchableOpacity>
-        {/* Icono de perfil en azul indicando la pantalla activa */}
-        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Profile')}>
-          <Ionicons name="person-outline" size={24} color="#4F8EF7" />
-          <Text style={[styles.menuText, { color: '#4F8EF7' }]}>Perfil</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }

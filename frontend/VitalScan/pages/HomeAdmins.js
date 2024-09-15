@@ -17,85 +17,82 @@ export default function HomeAdmins({ navigation }) {
                 secureTextEntry={false}
                 isPassword={false}
         />
-        <ScrollView>
-          <View>
-            <TouchableOpacity style={styles.reportButton}>
+        <ScrollView contentContainerStyle={styles.scrollViewContent}>
+          <TouchableOpacity style={styles.reportButton}>
             <Ionicons name="warning-outline" size={50} color="red" />
-                <View style={styles.iconTextContainer}>
-                  <Text style={styles.reportButtonText}>John Doe</Text>
-                  <Text style={styles.userId}>ID: E01234</Text>
-                </View>
-                <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity style={styles.reportButton}>
-          <Ionicons name="warning-outline" size={50} color="red" />
-              <View style={styles.iconTextContainer}>
-                <Text style={styles.reportButtonText}>John Doe</Text>
-                <Text style={styles.userId}>ID: E01234</Text>
-              </View>
-              <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.reportButtonText}>John Doe</Text>
+              <Text style={styles.userId}>ID: E01234</Text>
+            </View>
+            <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.reportButton}>
-          <Ionicons name="warning-outline" size={50} color="orange" />
-              <View style={styles.iconTextContainer}>
-                <Text style={styles.reportButtonText}>John Doe</Text>
-                <Text style={styles.userId}>ID: E01234</Text>
-              </View>
-              <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
+            <Ionicons name="warning-outline" size={50} color="red" />
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.reportButtonText}>John Doe</Text>
+              <Text style={styles.userId}>ID: E01234</Text>
+            </View>
+            <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.reportButton}>
-          <Ionicons name="warning-outline" size={50} color="orange" />
-              <View style={styles.iconTextContainer}>
-                <Text style={styles.reportButtonText}>John Doe</Text>
-                <Text style={styles.userId}>ID: E01234</Text>
-              </View>
-              <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
+            <Ionicons name="warning-outline" size={50} color="orange" />
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.reportButtonText}>John Doe</Text>
+              <Text style={styles.userId}>ID: E01234</Text>
+            </View>
+            <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.reportButton}>
-          <Ionicons name="warning-outline" size={50} color="green" />
-              <View style={styles.iconTextContainer}>
-                <Text style={styles.reportButtonText}>John Doe</Text>
-                <Text style={styles.userId}>ID: E01234</Text>
-              </View>
-              <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
+            <Ionicons name="warning-outline" size={50} color="orange" />
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.reportButtonText}>John Doe</Text>
+              <Text style={styles.userId}>ID: E01234</Text>
+            </View>
+            <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.reportButton}>
-          <Ionicons name="warning-outline" size={50} color="green" />
-              <View style={styles.iconTextContainer}>
-                <Text style={styles.reportButtonText}>John Doe</Text>
-                <Text style={styles.userId}>ID: E01234</Text>
-              </View>
-              <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
+            <Ionicons name="warning-outline" size={50} color="green" />
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.reportButtonText}>John Doe</Text>
+              <Text style={styles.userId}>ID: E01234</Text>
+            </View>
+            <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.reportButton}>
-          <Ionicons name="warning-outline" size={50} color="green" />
-              <View style={styles.iconTextContainer}>
-                <Text style={styles.reportButtonText}>John Doe</Text>
-                <Text style={styles.userId}>ID: E01234</Text>
-              </View>
-              <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
+            <Ionicons name="warning-outline" size={50} color="green" />
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.reportButtonText}>John Doe</Text>
+              <Text style={styles.userId}>ID: E01234</Text>
+            </View>
+            <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.reportButton}>
+            <Ionicons name="warning-outline" size={50} color="green" />
+            <View style={styles.iconTextContainer}>
+              <Text style={styles.reportButtonText}>John Doe</Text>
+              <Text style={styles.userId}>ID: E01234</Text>
+            </View>
+            <Ionicons name="arrow-forward-circle-outline" size={50} color="black" />
           </TouchableOpacity>
         </ScrollView>
 
         <View style={styles.bottomMenu}>
-        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Home')}>
-          <Ionicons name="home-outline" size={24} color="#4F8EF7" />
-          <Text style={[styles.menuText, { color: '#4F8EF7' }]}>Inicio</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Home')}>
+            <Ionicons name="home-outline" size={24} color="#4F8EF7" />
+            <Text style={[styles.menuText, { color: '#4F8EF7' }]}>Inicio</Text>
+          </TouchableOpacity>
  
-        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Profile')}>
-          <Ionicons name="person-outline" size={24} color="#000" />
-          <Text style={styles.menuText}>Perfil</Text>
-        </TouchableOpacity>
-      </View>
-
+          <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Profile')}>
+            <Ionicons name="person-outline" size={24} color="#000" />
+            <Text style={styles.menuText}>Perfil</Text>
+          </TouchableOpacity>
+        </View>
     </View>
   );
 }
@@ -105,48 +102,37 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F0F4FF', // Color de fondo claro
   },
-  headerContainer: {
-    padding: 20,
-    marginTop: 50, // Mueve el nombre e ID más abajo
-    alignItems: 'flex-start',
-  },
   title: {
     fontSize: 50,
     fontWeight: 'bold',
     marginBottom: 15,
     marginStart: 50,
     marginEnd: 10,
-    marginTop: 40,
     marginTop: 66,
     paddingHorizontal: 20,
     color: '#002E73',
-},
-  name: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#002E73',
   },
-  userId: {
-    fontSize: 16,
-    color: '#8A8A8A',
-    marginTop: 5,
+  scrollViewContent: {
+    paddingBottom: 80, // Espacio adicional en la parte inferior para evitar que el último botón quede oculto detrás de la barra de navegación
   },
   reportButton: {
     backgroundColor: '#FFFFFF',
     borderRadius: 20,
-    padding: 20, // Aumentar para hacer el botón más grande
+    padding: 20,
     marginHorizontal: 20,
+    marginBottom: 15, // Espacio entre los botones
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     elevation: 3,
   },
+  iconTextContainer: {
+    flex: 1,
+    marginStart: 15,
+  },
   reportButtonText: {
-    fontSize: 25, // Aumentar el tamaño del texto
-    fontWeight: 'bold', // Cambiar a negritas
-    marginEnd: 30,
-    marginBottom: 10,
-    marginTop: 10,
+    fontSize: 25,
+    fontWeight: 'bold',
     color: '#000000',
   },
   userId: {
@@ -170,6 +156,3 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 });
-
-
-

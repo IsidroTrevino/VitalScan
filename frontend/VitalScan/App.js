@@ -6,6 +6,8 @@ import Profile from './pages/Profile';
 import AboutApp from './pages/AboutApp'; 
 import Form from './pages/Form'; 
 import Support from './pages/Support'; 
+import HomeAdmins from './pages/HomeAdmins';
+import ProfileAdmins from './pages/ProfileAdmins';
 
 const Stack = createStackNavigator();
 
