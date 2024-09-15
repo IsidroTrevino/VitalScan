@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';  
+import { Ionicons } from '@expo/vector-icons';  // Importar iconos de Ionicons
 
-export default function Profile({ navigation }) {
+export default function ProfileAdmins({ navigation }) {
   const userData = {
     name: 'Alejandra Peña',
     id: 'E01234',
@@ -13,7 +13,7 @@ export default function Profile({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView style={styles.scrollView}>
         <View style={styles.profileContainer}>
           {/* Nombre e ID alineados a la izquierda */}
           <Text style={styles.name}>{userData.name}</Text>
@@ -34,26 +34,8 @@ export default function Profile({ navigation }) {
               <Text style={styles.infoValue}>{userData.city}</Text>
             </View>
           </View>
-
-          {/* Sección "Más" */}
-          <Text style={styles.sectionTitle}>Más</Text>
-          <View style={styles.moreContainer}>
-          <TouchableOpacity style={styles.moreButton} onPress={() => navigation.navigate('Support')}>
-            <Ionicons name="notifications-outline" size={24} color="#4F8EF7" />
-            <Text style={styles.moreButtonText}>Soporte</Text>
-          </TouchableOpacity>
-            <TouchableOpacity 
-              style={[styles.moreButton, { marginTop: 15 }]} 
-              onPress={() => navigation.navigate('AboutApp')}
-            >
-              <Ionicons name="information-circle-outline" size={24} color="#4F8EF7" />
-              <Text style={styles.moreButtonText}>Acerca de la App</Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </ScrollView>
-
-      {/* Menú inferior con casita y perfil */}
       <View style={styles.bottomMenu}>
         {/* Botón para navegar a Home */}
         <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('Home')}>
@@ -74,6 +56,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F0F4FF',  
+  },
+  scrollView: {
+    flex: 1,
   },
   profileContainer: {
     padding: 20,
@@ -111,33 +96,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#002E73',
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#002E73',
-    marginBottom: 10,
-    marginTop: 30, 
-  },
-  moreContainer: {
-    marginBottom: 20,
-  },
-  moreButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 15,
-    borderRadius: 10,
-    backgroundColor: '#FFFFFF',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 3,
-  },
-  moreButtonText: {
-    fontSize: 16,
-    color: '#4F8EF7',
-    marginLeft: 10, 
   },
   bottomMenu: {
     flexDirection: 'row',
