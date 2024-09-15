@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
-export default function InputField({ placeholder, value, onChangeText, secureTextEntry, isPassword }) {
+export default function InputField({ placeholder, value, onChangeText, secureTextEntry, isPassword, showIcon = true }) {
   const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   return (
     <View style={styles.inputContainer}>
-      {isPassword ? (
-        <MaterialIcons name="lock" size={20} color="#4F8EF7" />
-      ) : (
-        <FontAwesome name="envelope" size={20} color="#4F8EF7" />
+      {showIcon && (
+        isPassword ? (
+          <MaterialIcons name="lock" size={20} color="#4F8EF7" />
+        ) : (
+          <FontAwesome name="envelope" size={20} color="#4F8EF7" />
+        )
       )}
       <TextInput
         style={styles.input}
@@ -19,6 +21,7 @@ export default function InputField({ placeholder, value, onChangeText, secureTex
         onChangeText={onChangeText}
         secureTextEntry={isPassword ? !isPasswordVisible : secureTextEntry}
       />
+      {/* Show visibility toggle for password fields */}
       {isPassword && (
         <TouchableOpacity onPress={() => setPasswordVisible(!isPasswordVisible)}>
           <MaterialIcons
