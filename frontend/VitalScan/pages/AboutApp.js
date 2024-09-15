@@ -44,26 +44,26 @@ export default function AboutApp({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F4FF',  // Fondo claro general
+    backgroundColor: '#F0F4FF', 
   },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingTop: 30,  // Bajamos más el botón para facilitar su acceso
+    paddingTop: 30, 
   },
   backButton: {
-    backgroundColor: '#E0ECFF',  // Fondo azul claro para el círculo
-    padding: 10,  // Espacio interno del botón
-    borderRadius: 50,  // Hacer el botón circular
-    elevation: 3,  // Sombra para que se vea como un botón elevado
+    backgroundColor: '#E0ECFF', 
+    padding: 10,  
+    borderRadius: 50, 
+    elevation: 3,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#002E73',
-    textAlign: 'center',  // Centramos el título
-    marginTop: 40,        // Agrega un margen superior grande para bajar el título
+    textAlign: 'center', 
+    marginTop: 40,       
   },
   contentContainer: {
     padding: 20,
@@ -72,6 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#4F8EF7',
     marginBottom: 15,
-    lineHeight: 22,  // Para mejorar la legibilidad
+    lineHeight: 22, 
   },
 });

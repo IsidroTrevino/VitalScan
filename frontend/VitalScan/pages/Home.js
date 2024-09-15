@@ -60,11 +60,11 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F4FF', // Color de fondo claro
+    backgroundColor: '#F0F4FF',
   },
   headerContainer: {
     padding: 20,
-    marginTop: 50, // Mueve el nombre e ID más abajo
+    marginTop: 50, 
     alignItems: 'flex-start',
   },
   name: {
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   reportCard: {
     backgroundColor: '#E0ECFF',
     borderRadius: 15,
-    padding: 40, // Aumentar el padding para hacerla más grande
+    padding: 40,
     marginHorizontal: 20,
     marginVertical: 20,
   },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#002E73',
     marginBottom: 10,
-    textAlign: 'center', // Centrar el texto del título
+    textAlign: 'center', 
   },
   reportItem: {
     flexDirection: 'row',
@@ -102,18 +102,18 @@ const styles = StyleSheet.create({
   reportLabel: {
     fontSize: 16,
     color: '#002E73',
-    textAlign: 'left', // Alineado a la izquierda
+    textAlign: 'left', 
   },
   reportPercentage: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#002E73',
-    textAlign: 'right', // Alineado a la derecha
+    textAlign: 'right',
   },
   reportButton: {
     backgroundColor: '#FFFFFF',
     borderRadius: 15,
-    padding: 30, // Aumentar para hacer el botón más grande
+    padding: 30, 
     marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   reportButtonText: {
-    fontSize: 20, // Aumentar el tamaño del texto
-    fontWeight: 'bold', // Cambiar a negritas
+    fontSize: 20,
+    fontWeight: 'bold', 
     color: '#002E73',
   },
   bottomMenu: {

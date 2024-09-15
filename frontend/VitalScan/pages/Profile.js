@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';  // Importar iconos de Ionicons
+import { Ionicons } from '@expo/vector-icons';  
 
 export default function Profile({ navigation }) {
   const userData = {
@@ -73,7 +73,7 @@ export default function Profile({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F4FF',  // Fondo claro general
+    backgroundColor: '#F0F4FF',  
   },
   profileContainer: {
     padding: 20,
@@ -112,15 +112,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#002E73',
   },
-  // Subtítulo "Más"
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#002E73',
     marginBottom: 10,
-    marginTop: 30,  // Espacio superior para desplazarlo más abajo
+    marginTop: 30, 
   },
-  // Contenedor para los botones de "Soporte" y "Acerca de la App"
   moreContainer: {
     marginBottom: 20,
   },
@@ -139,7 +137,7 @@ const styles = StyleSheet.create({
   moreButtonText: {
     fontSize: 16,
     color: '#4F8EF7',
-    marginLeft: 10,  // Espacio entre el ícono y el texto
+    marginLeft: 10, 
   },
   bottomMenu: {
     flexDirection: 'row',

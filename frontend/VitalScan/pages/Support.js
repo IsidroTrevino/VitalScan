@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';  // Importar iconos de Ionicons
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Support({ navigation }) {
-  // Preguntas frecuentes
   const faqData = [
     {
       question: '¿Cómo puedo restablecer mi contraseña?',
@@ -57,32 +56,32 @@ export default function Support({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F4FF',  // Fondo claro general
+    backgroundColor: '#F0F4FF', 
   },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingTop: 30,  // Bajamos el botón para facilitar su acceso
+    paddingTop: 30, 
   },
   backButton: {
-    backgroundColor: '#E0ECFF',  // Fondo azul claro para el círculo
-    padding: 10,  // Espacio interno del botón
-    borderRadius: 50,  // Hacer el botón circular
-    elevation: 3,  // Sombra para que se vea como un botón elevado
+    backgroundColor: '#E0ECFF', 
+    padding: 10,
+    borderRadius: 50, 
+    elevation: 3, 
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#002E73',
     textAlign: 'center',
-    marginTop: 20,  // Ajuste para que el título esté más abajo
+    marginTop: 20, 
     marginBottom: 20,
   },
   faqCard: {
     backgroundColor: '#E0ECFF',
     borderRadius: 15,
-    padding: 15,  // Ajuste de padding para que quepa mejor el contenido
+    padding: 15, 
     marginHorizontal: 20,
     marginVertical: 10,
   },
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
   answer: {
     fontSize: 14,
     color: '#4F8EF7',
-    lineHeight: 20,  // Mejora la legibilidad
+    lineHeight: 20, 
   },
   contactButton: {
     backgroundColor: '#FFFFFF',
